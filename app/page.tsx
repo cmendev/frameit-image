@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/ui/card";
-import { Image, PaintBucket } from "lucide-react";
+import { ImageIcon, PaintBucket } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
       {/* Navbar */}
       <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-        <img src="/me.webp" alt="" className="size-11" />
+        <Image src="/me.webp" width={44} height={44} alt="me icon" />
         <h1 className="text-xl font-bold">ImageTools</h1>
       </nav>
 
@@ -21,7 +22,7 @@ export default function Home() {
         <div className="mt-6 flex space-x-4">
           <Link href="/convert">
             <Button className="flex items-center">
-              <Image className="mr-2" /> Convert Images
+              <ImageIcon className="mr-2" /> Convert Images
             </Button>
           </Link>
           <Link href="/gradient">
