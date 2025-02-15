@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { FeatureImage } from "@/components/ui/image";
 
 export default function ImageConverter() {
   const [image, setImage] = useState<File | null>(null);
@@ -154,12 +155,7 @@ export default function ImageConverter() {
 
           {preview && (
             <div className="mt-4 flex justify-center">
-              <img
-                src={preview}
-                alt="Preview"
-                className="rounded-lg shadow"
-                style={{ width: `${width}px`, height: `${height}px` }}
-              />
+                <FeatureImage preview={preview} widthpx={width} heightpx={height} />
             </div>
           )}
         </div>

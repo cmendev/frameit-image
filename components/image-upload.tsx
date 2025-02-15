@@ -8,6 +8,7 @@ import SettingSlider from "./settings-slider";
 import { useDropzone } from "react-dropzone";
 import html2canvas from "html2canvas";
 import { saveAs } from 'file-saver';
+import Image from "next/image";
 
 export default function ImageUpload() {
   const [startColor, setStartColor] = useState('#2500db');
@@ -74,10 +75,13 @@ export default function ImageUpload() {
           <div {...getRootProps()} className="w-full h-full flex items-center justify-center cursor-pointer">
             <input {...getInputProps()} />
             {image ? (
-              <img
+              <Image
                 src={image}
                 alt="uploaded"
                 className="max-w-full max-h-full"
+                width={`${zoom *3}`}
+        
+                height={`${zoom*3}`}
                 style={{
                   transform: `scale(${zoom / 100})`,
                   opacity: transparency / 100,
