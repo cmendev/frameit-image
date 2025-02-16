@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { ImagePlus, Download } from "lucide-react";
 import { FeatureImage } from "@/components/ui/image";
 
 export default function ImageConverter() {
@@ -140,22 +140,32 @@ export default function ImageConverter() {
       <div className="flex-1 p-8 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Image Converter</h1>
 
-        <div className="w-full max-w-lg p-4 bg-white rounded-lg shadow-lg flex flex-col items-center">
-        {!preview && (
+        <div className="w-full p-4 bg-white rounded-lg shadow-lg flex flex-col items-center">
+          {!preview && (
             <label className="w-full cursor-pointer flex flex-col items-center border-dashed border-2 border-gray-300 py-6 rounded-lg">
-                <input
+              <input
                 type="file"
                 accept="image/*"
                 onChange={handleImageUpload}
                 className="hidden"
-                />
-                <span className="text-gray-500">Click or drag an image here</span>
+              />
+              <span className="text-gray-500">Click or drag an image here</span>
             </label>
-            )}
+          )}
 
           {preview && (
-            <div className="mt-4 flex justify-center">
+            <div className="flex flex-col">
+              <div className="mt-4 flex justify-center">
                 <FeatureImage preview={preview} widthpx={width} heightpx={height} />
+              </div><label className="w-10 p-2 mt-2 cursor-pointer rounded-full flex flex-col items-center border-dashed border-2 border-gray-300 ">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+                <ImagePlus />
+              </label>
             </div>
           )}
         </div>
