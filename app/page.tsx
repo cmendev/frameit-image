@@ -7,12 +7,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
-      {/* Navbar */}
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-        <Image src="/me.webp" width={44} height={44} alt="me icon" />
-        <h1 className="text-xl font-bold">ImageTools</h1>
-      </nav>
-
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center py-20 px-6">
         <h2 className="text-4xl font-extrabold mb-4">Professional Image Tools</h2>

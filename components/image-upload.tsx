@@ -49,9 +49,9 @@ export default function ImageUpload() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div className="w-72 p-6 bg-white shadow-lg overflow-y-auto rounded-r-2xl">
+    <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+      {/* Sidebar - Se ubica arriba en móviles y a la izquierda en pantallas grandes */}
+      <div className="w-full md:w-72 p-6 bg-white shadow-lg overflow-y-auto rounded-b-2xl md:rounded-r-2xl">
         <h2 className="text-lg font-semibold mb-4">Background</h2>
         <ColorPicker label="Start Color" color={startColor} onChange={setStartColor} />
         <ColorPicker label="End Color" color={endColor} onChange={setEndColor} />
@@ -80,7 +80,6 @@ export default function ImageUpload() {
                 alt="uploaded"
                 className="max-w-full max-h-full"
                 width={`${zoom *3}`}
-        
                 height={`${zoom*3}`}
                 style={{
                   transform: `scale(${zoom / 100})`,
