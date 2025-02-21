@@ -77,11 +77,9 @@ export default function ImageConverter() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div className="w-64 p-6 bg-white shadow-lg rounded-r-2xl">
+    <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+      <div className="w-full md:w-64 p-6 bg-white shadow-lg rounded-b-2xl md:rounded-r-2xl">
         <h2 className="text-lg font-semibold mb-4">Conversion Options</h2>
-
         <div className="space-y-4">
           <label className="block">
             <span className="text-sm font-medium">Width (px)</span>
@@ -92,7 +90,6 @@ export default function ImageConverter() {
               className="mt-1 w-full p-2 border rounded"
             />
           </label>
-
           <label className="block">
             <span className="text-sm font-medium">Height (px)</span>
             <input
@@ -102,7 +99,6 @@ export default function ImageConverter() {
               className="mt-1 w-full p-2 border rounded"
             />
           </label>
-
           <label className="block">
             <span className="text-sm font-medium">Quality (%)</span>
             <input
@@ -114,7 +110,6 @@ export default function ImageConverter() {
               className="mt-1 w-full p-2 border rounded"
             />
           </label>
-
           <label className="block">
             <span className="text-sm font-medium">Format</span>
             <select
@@ -129,41 +124,25 @@ export default function ImageConverter() {
             </select>
           </label>
         </div>
-
         <Button className="mt-6 w-full" onClick={handleSubmit}>
           <Download className="h-4 w-4 mr-2" />
           Convert Image
         </Button>
       </div>
-
-      {/* Preview Section */}
       <div className="flex-1 p-8 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Image Converter</h1>
-
         <div className="w-full p-4 bg-white rounded-lg shadow-lg flex flex-col items-center">
           {!preview && (
             <label className="w-full cursor-pointer flex flex-col items-center border-dashed border-2 border-gray-300 py-6 rounded-lg">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-              />
+              <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
               <span className="text-gray-500">Click or drag an image here</span>
             </label>
           )}
-
           {preview && (
-            <div className="flex flex-col">
-              <div className="mt-4 flex justify-center">
-                <FeatureImage preview={preview} widthpx={width} heightpx={height} />
-              </div><label className="w-10 p-2 mt-2 cursor-pointer rounded-full flex flex-col items-center border-dashed border-2 border-gray-300 ">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  className="hidden"
-                />
+            <div className="flex flex-col items-center">
+              <FeatureImage preview={preview} widthpx={width} heightpx={height} />
+              <label className="w-10 p-2 mt-2 cursor-pointer rounded-full flex flex-col items-center border-dashed border-2 border-gray-300">
+                <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
                 <ImagePlus />
               </label>
             </div>
