@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function ImageUpload() {
   const [startColor, setStartColor] = useState('#2500db');
-  const [endColor, setEndColor] = useState('#ff4000');
+  const [endColor, setEndColor] = useState('#f44000');
   const [zoom, setZoom] = useState(100);
   const [transparency, setTransparency] = useState(100);
   const [borderRadius, setBorderRadius] = useState(0);
